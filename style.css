@@ -1,0 +1,143 @@
+body{
+  margin: 0;
+}
+
+.noDisplay{
+  display: none;
+}
+
+#input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#main{
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+#content{
+   
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 1440px;
+    
+}
+
+
+#popup{
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 998;
+     
+        
+    
+}
+#popupField{
+    
+    margin: 15%;
+    padding: 10%;
+    height: 25%;
+    width:50%;
+    max-width: 1440px;
+    max-height: 1440px;
+    border: 1px solid black;
+    background-color: antiquewhite;
+    z-index: 999;
+    overflow:auto;
+}
+
+
+h1{
+    
+    text-align: center;
+    padding-top: 10px;
+    margin: 0;
+}
+
+h2{
+    color: blue;
+    margin:0;
+    text-align: center;
+}
+
+hr{
+    margin:0;
+    border-color:  black;
+    height: 0px;
+    background-color: black;
+    border-radius: 1px;
+}
+
+.stickyNote{
+    border: 0.2px solid black;
+    background-color: aqua;
+    box-shadow:  3px 2px 1px rgba(0, 0, 0, .2);;
+    padding: 10px;
+    margin: 10px;
+    height:fit-content;
+    width: fit-content;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.stickyNoteContent{
+    
+    max-width: 150px;
+    max-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5 ;
+}
+
+.stickyNoteDelRow{
+
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+}
+
+.delbtn{
+    border-radius: 8px;
+    padding: 2px 4px;
+    width:100%;
+    z-index: 50;
+    
+}
+
+.delbtn:hover{
+    background-color:brown;
+    
+}
+
+@media screen and (max-width: 1000px) {
+    
+    #popupField{
+        height: 50%;
+    }
+
+
+
+
+}
