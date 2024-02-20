@@ -1,5 +1,31 @@
+/* bebas-neue-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/bebas-neue-v14-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+
+/* roboto-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/roboto-v30-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+
+
+
 body{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
   margin: 0;
+  height: 80vh;
 }
 
 .noDisplay{
@@ -12,6 +38,17 @@ body{
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    gap: 60px;
+}
+
+#trashIcon{
+    width: 26px;
+    height: 26px;
+    background-color: gray;
+}
+
+#trashIcon:hover{
+    cursor: pointer;
 }
 
 #main{
@@ -19,18 +56,19 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-
+    height: 100%;
     
 }
 
 #content{
    
-    background-color: aquamarine;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    width: 1440px;
+    max-width: 1440px;
+    height: 100%;
     
 }
 
@@ -45,10 +83,32 @@ body{
     width:100%;
     background-color: rgba(0,0,0,0.5);
     z-index: 998;
+
+    
+    
      
         
     
 }
+
+.animationEinblenden{
+    animation: einblenden 0.5s;
+}
+
+.animationAusblenden{
+    animation: ausblenden 0.8s;
+}
+
+@keyframes einblenden{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes ausblenden{
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
 #popupField{
     
     margin: 15%;
@@ -59,22 +119,111 @@ body{
     max-height: 1440px;
     border: 1px solid black;
     background-color: antiquewhite;
+    border-radius: 8px;
     z-index: 999;
     overflow:auto;
 }
 
 
+#testEingabe:hover{
+    cursor: pointer;
+}
+
+#input{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#inputSection{
+    
+    top:0;
+    left:0;
+    position: fixed;
+    height: 50%;
+    width: 100%;
+    background-color: white;
+    z-index: 800;
+    box-shadow: 0px 20px 10px rgba(0, 0, 0, .2);
+}
+
+#inputCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+#inputField{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+
+    width: fit-content;
+    max-width: 50%;
+    max-height: 50%;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#inputFieldButtonRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right:20px;
+}
+
+#titleInput{
+    width: 100%;
+    margin-bottom:10px;
+}
+
+#noteInput{
+    width: 100%;
+    max-width:100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100px;
+}
+
+#noteInputCancelIcon{
+    width: 25px;
+    height:25px;
+    background-color: red
+}
+
+#noteInputSubmitIcon{
+    width: 25px;
+    height: 25px;
+    background-color: green;
+}
+
 h1{
     
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 78px;
+
     text-align: center;
-    padding-top: 10px;
+    padding-top: 24px;
     margin: 0;
 }
 
 h2{
-    color: blue;
+    color:saddlebrown;
     margin:0;
     text-align: center;
+    font-weight: bold;
+    font-size: 28px;
 }
 
 hr{
@@ -83,11 +232,12 @@ hr{
     height: 0px;
     background-color: black;
     border-radius: 1px;
+    text-align: center;
 }
 
 .stickyNote{
     border: 0.2px solid black;
-    background-color: aqua;
+    background-color: antiquewhite;
     box-shadow:  3px 2px 1px rgba(0, 0, 0, .2);;
     padding: 10px;
     margin: 10px;
@@ -98,6 +248,11 @@ hr{
     flex-direction: column;
     
 }
+
+.stickyNote:hover{
+    cursor: pointer;
+}
+
 
 .stickyNoteContent{
     
@@ -113,23 +268,97 @@ hr{
 .stickyNoteDelRow{
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     
     align-items: center;
 }
 
 .delbtn{
-    border-radius: 8px;
-    padding: 2px 4px;
-    width:100%;
-    z-index: 50;
+    width: 26px;
+    height:26px;
+    background-color: white;
     
 }
 
-.delbtn:hover{
-    background-color:brown;
-    
+
+
+
+#trashSection{
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color: white;
+    z-index: 998;
+
 }
+
+#trashSectionTitle{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:26px;
+}
+
+#trashHeading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+#trashSubtitle{
+    font-size: 48px;
+    font-family:'Bebas Neue';
+}   
+
+#trashContent{
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+     
+}
+
+#closeTrashSectionIcon{
+    width: 26px;
+    height: 26px;
+    background-color: brown;
+}
+
+
+#restoreNoteIcon{
+    width:26px;
+    height:26px;
+    background-color: green;
+}
+
+#finalDelbtn{
+    width:26px;
+    height:26px;
+    background-color: crimson;
+}
+
+
+#footer{
+height: 128px;
+background-color: darkslategrey;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+}
+
 
 @media screen and (max-width: 1000px) {
     
@@ -137,7 +366,20 @@ hr{
         height: 50%;
     }
 
+    h1{
+        font-size: 56px;
+    }
 
+    #trashSubtitle{
+        font-size: 36px;
+        font-family:'Bebas Neue';
+    }   
 
+    #trashHeading{
+        gap: 30px;
+    }
 
+    #input{
+        gap:15px;
+    }
 }

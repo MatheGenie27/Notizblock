@@ -18,8 +18,9 @@
     <div id="input">
       
     
-       <input id="testEingabe" type="text" placeholder="Notiz schreiben">
-       <button onclick="addNote()">submit</button>
+       <input onclick="showInputSection()" id="testEingabe" type="text" title="Notiz anlegen" placeholder="Notiz anlegen">
+       <!--<button onclick="addNote()">submit</button> -->
+       <img id="trashIcon" title="Inhalt des Mülleimers zeigen" onclick="showTrashSection()">
     </div>
 
     <div id="main">
@@ -33,15 +34,54 @@
           </div>
       
       </div>
+
+      <div id="inputSection" class="noDisplay">
+          
+        <div id="inputCenter">       
+              <form id="inputField" >
+                <input id="titleInput" placeholder="Titel der Notiz"type="text" >
+                <textarea id="noteInput" placeholder="Notiz..."></textarea>
+                
+                <div id="inputFieldButtonRow">
+                  
+                  <img id="noteInputCancelIcon" onclick="closeInputSection()" title="Verwerfen">
+                  <img id="noteInputSubmitIcon" onclick="submitNote()" title="Notiz anlegen">
+                  
+              </div>
+              </form>
+        </div>      
+       </div>
+      </div>
       
-      
+
+      <div id="trashSection" class="noDisplay">
+        <div id="trashSectionTitle">
+          <h1>Notizblock</h1>
+          
+          <div id="trashHeading">
+            <div id="trashSubtitle">Mülleimer</div>
+            <img id="closeTrashSectionIcon" onclick="closeTrashSection()" title="Mülleimer verlassen">
+          </div>   
+              
+          
+        </div>
+        
+        <div id="trashContent"> 
+
+
+        </div>
+
+        
+      </div>
+
 
     </div>
-
 
     <div id="footer">
-
+      Icons von https://www.flaticon.com/de/
     </div>
+
+    
 
     
 
