@@ -112,9 +112,11 @@ function addNote() {
   let title = document.getElementById("titleInput");
   let note = document.getElementById("noteInput");
 
+  let noteAsString = note.value.replace(/\n/g, "<br/>");
+
   if (title.value && note.value) {
     noteTitle.push(title.value);
-    noteContent.push(note.value);
+    noteContent.push(noteAsString);
     noteDate.push(heute);
 
     title.value = "";
