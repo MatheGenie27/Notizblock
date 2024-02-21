@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notizblock</title>
-    <link rel="icon" type="image/x-icon" href="" />
+    <link rel="icon"  href="./img/edit.svg" />
 
     <!--css einbinden-->
     <link rel="stylesheet" href="style.css" />
@@ -12,15 +12,17 @@
     <!--javascript einbinden-->
     <script src="script.js"></script>
   </head>
-  <body onload="render()">
-    <h1>Notizblock</h1>
+  <body onload="loadLocal(), render()">
     
+    <div id="SiteHeading">
+      <img id="SiteIcon" src="./img/edit.svg">
+      <h1>Notizblock</h1>
+    </div>
     <div id="input">
       
-    
-       <input onclick="showInputSection()" id="testEingabe" type="text" title="Notiz anlegen" placeholder="Notiz anlegen">
-       <!--<button onclick="addNote()">submit</button> -->
-       <img id="trashIcon" title="Inhalt des Mülleimers zeigen" onclick="showTrashSection()">
+      <img id="inputIcon" onclick="showInputSection()" title="Notiz anlegen" src="./img/pencil.svg">
+               
+      <img id="trashIcon" title="Inhalt des Mülleimers zeigen" onclick="showTrashSection()" src="./img/trash2.svg">
     </div>
 
     <div id="main">
@@ -44,8 +46,8 @@
                 
                 <div id="inputFieldButtonRow">
                   
-                  <img id="noteInputCancelIcon" onclick="closeInputSection()" title="Verwerfen">
-                  <img id="noteInputSubmitIcon" onclick="submitNote()" title="Notiz anlegen">
+                  <img id="noteInputCancelIcon" onclick="closeInputSection()" title="Verwerfen" src="./img/cross-circle.svg">
+                  <img id="noteInputSubmitIcon" onclick="submitNote()" title="Notiz anlegen" src="./img/check-circle.svg">
                   
               </div>
               </form>
@@ -56,11 +58,15 @@
 
       <div id="trashSection" class="noDisplay">
         <div id="trashSectionTitle">
-          <h1>Notizblock</h1>
-          
+          <div id="trashSectionHeadline">
+            <img id="trashSectionIcon" src="./img/trash2.svg">
+            <h1>Notizblock</h1>
+          </div>
+
           <div id="trashHeading">
+            
+            <img id="closeTrashSectionIcon" onclick="closeTrashSection()" title="Mülleimer verlassen" src="./img/undo.svg">
             <div id="trashSubtitle">Mülleimer</div>
-            <img id="closeTrashSectionIcon" onclick="closeTrashSection()" title="Mülleimer verlassen">
           </div>   
               
           
